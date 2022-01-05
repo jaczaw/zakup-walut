@@ -33,9 +33,9 @@ public class CurrencySaleNbpClient {
                 .getBody();
     }
 
-    public WalutaDto getAllWalutyKursMid() {
+    public  List<RateMidDto> getAllWalutyKursMid() {
         return rest.exchange(Constants.TABEL_A_KURS_SREDNI,
-                HttpMethod.GET, null, new ParameterizedTypeReference<WalutaDto>() {})
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<RateMidDto>>() {})
                 .getBody();
     }
 
