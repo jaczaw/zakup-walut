@@ -23,7 +23,7 @@ public class ApplicationExceptionHandler {
     @ExceptionHandler(value = HttpClientErrorException.class)
     public ResponseEntity<ApiError> handleException(HttpClientErrorException e) {
         ApiError apiError = new ApiError(HttpStatus.NOT_FOUND, HttpStatus.NOT_FOUND.value(), e.getLocalizedMessage(), ZonedDateTime.now());
-        log.info(String.format("Problem z wywołaniem zasobu - %s", e.getLocalizedMessage()));
+        log.info(String.format("Problem z wywołaniem uslugi NBP - %s", e.getLocalizedMessage()));
         return new ResponseEntity<>(apiError, apiError.getHttpStatus());
     }
 }
