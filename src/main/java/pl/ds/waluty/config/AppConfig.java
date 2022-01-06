@@ -20,7 +20,7 @@ public class AppConfig {
     public OpenAPI customOpenAPI(@Value("${app.description}") String appDescription,
                                  @Value("${app.version}") String appVersion) {
 
-        return new OpenAPI().info(new Info().title("Prototym aplikacji Zakup-Walut w NBP API").version(appVersion)
+        return new OpenAPI().info(new Info().title("Prototym mikroserwisu Zakup-Walut w NBP API").version(appVersion)
                 .description(appDescription).termsOfService("http://swagger.io/terms/")
                 .license(new License().name("Apache 2.0").url("http://springdoc.org")));
 
