@@ -27,7 +27,4 @@ public class CurrencyExchRate {
     private String bid;
     private String ask;
     private String mid;
-
-
-
 }
