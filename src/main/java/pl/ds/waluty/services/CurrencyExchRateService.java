@@ -70,6 +70,13 @@ public class CurrencyExchRateService {
         }
     }
 
+    public boolean isCurrencyInCache(String table, String code, String date){
+        return currencyExchRateRepository.findByTabelaAndCodeAndDate(table,code, date)
+                .stream()
+                .findFirst()
+                .isPresent();
+    }
+
     public CurrencyRateDto getFromNbp(String table, String code, String date){
         RateDto rateDto = currencySaleNbpClient.getRateFromNbp(table,code, date);
         RateTab rateTab = rateDto.getRates().get(0);

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -45,6 +46,6 @@ public class CurrencySaleNbpClient {
                 .fromHttpUrl(Constants.KURS_TABELA_KOD_DATA)
                 .build(urlVariables);
         log.info(String.format("Pobrano kurs z NBP {TABELA: %s, CODE: %s Data: %s}",table,code,date));
-        return rest.getForEntity(url, RateDto.class).getBody();
+        return rest.getForObject(url, RateDto.class);
     }
 }
